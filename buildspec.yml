@@ -1,0 +1,32 @@
+version: 0.2
+
+
+phases:
+  install:
+    runtime-versions:
+      java: openjdk8
+    commands:
+      - echo install
+      - command
+  pre_build:
+    commands:
+      - echo pre_build
+  build:
+    commands:
+      - mvn packadge
+      - echo build
+  post_build:
+    commands:
+      - echo post_build
+reports:
+  report-group-name-or-arn:
+    files:
+      - location
+      - location
+    base-directory: location
+    discard-paths: no | yes
+    file-format: report-format
+artifacts:
+  files:
+    - target\spring-boot-todo-rest-api-h2-aws-codepipiline-0.0.1-SNAPSHOT.jar
+    - location
